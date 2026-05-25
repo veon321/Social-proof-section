@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+:root {
+    --very-dark-magenta: hsl(300, 43%, 22%);
+    --soft-pink: hsl(333, 80%, 67%);
+    --dark-grayish-magenta: hsl(303, 10%, 53%);
+    --light-grayish-magenta: hsl(300, 24%, 96%);
+    --white: hsl(0, 0%, 100%);
+    --font-main: 'League Spartan', sans-serif;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100vh;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-main);
+    background-color: var(--white);
+    background-image: url('images/bg-pattern-top-desktop.svg'), url('images/bg-pattern-bottom-desktop.svg');
+    background-repeat: no-repeat, no-repeat;
+    background-position: top left, bottom right;
+    padding: 40px 20px;
+}
+
+main {
+    width: 1110px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(24px, 5vw, 50px);
+}
+
+.content-start {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.content-start2 {
+    max-width: 400px;
+}
+
+.head {
+    color: var(--very-dark-magenta);
+    width: 320px;
+    font-size: clamp(32px, 4vw + 1rem, 50px);
+    line-height: 0.9;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.description {
+    color: var(--dark-grayish-magenta);
+    width: 380px;
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: clamp(14px, 1.2vw, 15px);
+}
+
+.rates {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 540px; 
+}
+
+.rate {
+    background-color: var(--light-grayish-magenta);
+    border-radius: 10px;
+    padding: 20px 32px;
+    color: var(--very-dark-magenta);
+    display: flex;
+    align-items: center;
+    width: 450px;
+}
+
+.rate-img {
+    display: flex;
+    gap: 5px;
+}
+
+.rate-description {
+    margin-left: 30px;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.rate:nth-child(1) {
+    align-self: flex-start;
+}
+
+.rate:nth-child(2) {
+    align-self: center;
+}
+
+.rate:nth-child(3) {
+    align-self: flex-end;
+}
+
+.profiles {
+    display: flex;
+    width: 100%;
+    margin-top: 20px;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.profile {
+    background-color: var(--very-dark-magenta);
+    padding: 40px 32px;
+    border-radius: 10px;
+    flex: 1;
+}
+
+.profile:nth-child(1) {
+    transform: translateY(0);
+}
+
+.profile:nth-child(2) {
+    transform: translateY(16px);
+}
+
+.profile:nth-child(3) {
+    transform: translateY(32px);
+}
+
+.about {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.image-content img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.name-buyer {
+    display: flex;
+    flex-direction: column;
+    margin-left: 24px;
+}
+
+.name {
+    color: var(--white);
+    font-weight: 700;
+}
+
+.buyer {
+    color: var(--soft-pink);
+    margin-top: 4px;
+    font-size: 15px;
+}
+
+.opinion {
+    color: var(--white);
+    line-height: 1.4;
+    font-size: clamp(14px, 1.2vw, 15px);
+}
+
+@media (max-width: 768px) {
+    body {
+        align-items: flex-start;
+        background-image: url('images/bg-pattern-top-mobile.svg'), url('images/bg-pattern-bottom-mobile.svg');
+        padding: 60px 24px;
+    }
+
+    .content-start {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .content-start2 {
+        max-width: 100%;
+    }
+
+    .head {
+        width: 100%;
+        margin-bottom: 16px;
+    }
+
+    .description {
+        width: 100%;
+    }
+
+    .rates {
+        width: 100%;
+        align-items: center;
+    }
+
+    .rate {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+        padding: 16px;
+    }
+
+    .rate-description {
+        margin-left: 0;
+    }
+
+    .rate:nth-child(1),
+    .rate:nth-child(2),
+    .rate:nth-child(3) {
+        align-self: center;
+    }
+
+    .profiles {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .profile:nth-child(1),
+    .profile:nth-child(2),
+    .profile:nth-child(3) {
+        transform: translateY(0);
+    }
+}
